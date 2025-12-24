@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+
+.header-himawari h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+.slogan {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.contenedor{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-areas: 
+        "header  header"
+        "sidebar  main"
+        "footer  footer";
+    border: 1px solid black ;
+}
+.header-himawari{
+    grid-area: header;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url('./assets/icon/icono-tienda.png') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    
+    height: 10vh;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: black;
+    border: 1px solid black ;
+}
+.marca-agua {
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url('./assets/icon/icono-tienda.png') center/cover no-repeat;
+    color: #fff;
+    text-align: center; 
+}
+
+.main{
+    grid-area: main;
+    border: 1px solid black ;
+    height: 80vh;
+    z-index: 1;
+    position: relative;
+}
+.footer{
+    grid-area: footer;
+    background-color: lightcoral;
+    border: 1px solid black ;
+    height: 10vh;
+}
+.img-icon{
+    width: 40px;
+    height: 40px;
+}
+
+.img-tienda{
+    width: 120px;
+    height: 120px;
+    background-image: image-set();
+}
+
+.alinear-centro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary {
+    background: #f4b400; /* amarillo girasol */
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+    .main {
+        height: auto;
+    }
+}
