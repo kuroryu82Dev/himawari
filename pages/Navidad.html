@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="contenedor">
-        <header class="header-himawari">
+        <header>
             <div class="header-content">
                 <h1>Himawari</h1>
                 <p class="slogan">
@@ -17,82 +17,86 @@
                 </p>
             </div>
         </header>
-        <nav class="sidebar">
-            <div id="sidebardiv" class = "class=d-flex flex-column flex-shrink-0 p-3 text-bg-dark">
-                <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" href="/">
-                    <img class="img-icon" src="../assets/icon/icono-tienda.png" alt="">
-                    <span class="fs-4">Menu</span>
-                </a>
+
+        <sidebar>
+            <ul>
+                <li>
+                    <a href="../index.html">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="./muertos.html">
+                        Muertos
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#">
+                        Navidad
+                    </a>
+                </li>
+                <li>
+                    <a href="./cumpleaños.html">
+                        Cumpleaños
+                    </a>
+                </li>
+                <li>
+                    <a href="./otros.html">
+                        Otros
+                    </a>
+                </li>
                 <hr>
-                <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
-                        <a href="../index.html" class="nav-link text-white" aria-current="page">
-                            Inicio
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./muertos.html" class="nav-link text-white">
-                            Muertos
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-white active">
-                            Navidad
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./cumpleaños.html" class="nav-link text-white">
-                            Cumpleaños
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./otros.html" class="nav-link text-white">
-                            Otros
-                        </a>
-                    </li>
-                    <hr>
-                    <li>
-                        <a href="./acerca.html" class="nav-link text-white">
-                            Acerca de
-                        </a>
-                    </li>
-            </div>
-        </nav>
+                <li>
+                    <a href="./acerca.html">
+                        Acerca de
+                    </a>
+                </li>
+            </ul>
+        </sidebar>
         
-        <section class="main marca-agua">
+        <main class="marca-agua">
             <div class="flex-container">
-                <div class="card" style="width: 18rem;">
-                    <img src="../assets/img/navidad.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Honamento</h5>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ab odit asperiores ipsa ut eius doloremque ducimus amet, esse voluptate commodi, veritatis numquam magni eos reprehenderit consectetur eveniet quisquam sequi.
-                        </p>
-                        <a href="#" class="btn btn-primary">Agregar</a>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../assets/img/navidad.webp" class="img-card" alt="...">
+                    </div>
+                    <div class="category"> Honamento </div>
+                    <div class="info">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ab odit asperiores ipsa ut eius doloremque ducimus amet, esse voluptate commodi, veritatis numquam magni eos reprehenderit consectetur eveniet quisquam sequi</p>
+                    </div>
+                    <div class="footer">
+                        <button type="button" class="action">Agregar </button>
                     </div>
                 </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="../assets/img/navidad1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Hornamento</h5>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ut beatae nemo esse possimus cum perferendis obcaecati, unde officiis quasi quidem debitis tenetur repudiandae, aspernatur iure sapiente tempora reiciendis commodi.
-                        </p>
-                        <a href="#" class="btn btn-primary">Agregar</a>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../assets/img/navidad1.jpg" class="img-card" alt="...">
+                    </div>
+                    <div class="category"> Honamento reno </div>
+                    <div class="info">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ab odit asperiores ipsa ut eius doloremque ducimus amet, esse voluptate commodi, veritatis numquam magni eos reprehenderit consectetur eveniet quisquam sequi</p>
+                    </div>
+                    <div class="footer">
+                        <button type="button" class="action">Agregar </button>
                     </div>
                 </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="../assets/img/navidad3.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Hornamento/h5>
-                        <p class="card-text">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam dolorem id eveniet maxime fugiat, quod consectetur in sed itaque officiis hic tenetur amet corporis adipisci? Veritatis magni corrupti qui nam?
-                        </p>
-                        <a href="#" class="btn btn-primary">Agregar</a>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="../assets/img/navidad3.webp" class="img-card" alt="...">
+                    </div>
+                    <div class="category"> Esferas </div>
+                    <div class="info">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ab odit asperiores ipsa ut eius doloremque ducimus amet, esse voluptate commodi, veritatis numquam magni eos reprehenderit consectetur eveniet quisquam sequi</p>
+                    </div>
+                    <div class="footer">
+                        <button type="button" class="action">Agregar </button>
                     </div>
                 </div>
+
             </div>
-        </section>   
+        </main>   
         
         <footer class="footer">
             <p>&copy; 2025 Mi Página Web</p>

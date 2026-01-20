@@ -1,0 +1,55 @@
+@use '../utilities/variables' as *;
+sidebar{
+    background: black;
+    height: $alturaSidebaryMain;
+    hr{
+        color: white;
+    }
+    ul{
+        list-style: none;
+        align-items: center;
+        margin: 0;
+        width: 200px;
+        li{
+            text-align: center;
+            margin: 10px 0;
+            background-color: gray;
+            border-radius: 10px;
+            padding-bottom: 10px;
+            a{
+                
+                
+                color: white;
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .active{
+            background: rgb(201, 204, 5);
+            color: black;
+            font-weight: bold;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    sidebar {
+        height: auto;
+    }
+    
+    sidebar ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    sidebar ul li {
+        flex: 1;
+        min-width: 100px;
+        margin: 5px;
+    }
+}

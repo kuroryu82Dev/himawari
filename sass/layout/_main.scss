@@ -1,0 +1,42 @@
+@use '../utilities/variables' as *;
+main{
+    grid-area: main;
+    border: 1px solid black ;
+    height: $alturaSidebaryMain;
+    position: relative;
+}
+.marca-agua {
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),url(../../assets/icon/icono-tienda.png)center/contain no-repeat;
+    color: #fff;
+    text-align: center; 
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+    main {
+        height: auto;
+        min-height: 500px;
+    }
+    
+    .flex-container {
+        justify-content: center;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        height: auto;
+    }
+    
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,23 @@
+.contenedor{
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    grid-template-areas: 
+        "header  header"
+        "sidebar  main"
+        "footer  footer";
+    border: 1px solid black ;
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+    .main {
+        height: 700px;
+    }
+}

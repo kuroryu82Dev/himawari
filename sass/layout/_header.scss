@@ -1,0 +1,22 @@
+header{
+    grid-area: header;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),url(../../assets/icon/icono-tienda.png)4% center/contain no-repeat;
+    color: #fff;
+    text-align: center;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    h1{
+        font-size: 3rem;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+
+    p{
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        margin-top: -20px;
+    }
+}
