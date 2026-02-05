@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de pedidos online de Himawari. Realiza tu compra de productos decorativos de MDF personalizados de forma segura y rápida.">
+    <meta name="keywords" content="pedidos online, comprar MDF, carrito de compras, pago seguro, envíos México">
+    <meta name="author" content="Himawari">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Pedidos - Himawari">
+    <meta property="og:description" content="Realiza tu pedido de productos decorativos de MDF personalizados.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://himawari.com/pages/pedidos.html">
+    
+    <link rel="canonical" href="https://himawari.com/pages/pedidos.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Realizar Pedido - Himawari</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <header>
+            <div class="header-content">
+                <h1>Himawari</h1>
+                <p class="slogan">
+                    Diseño en MDF que transforma tus espacios
+                </p>
+            </div>
+        </header>
+
+        <sidebar>
+            <ul>
+                <li>
+                    <a href="../index.html">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="./muertos.html">
+                        👻 Muertos
+                    </a>
+                </li>
+                <li>
+                    <a href="./Navidad.html">
+                        🎄 Navidad
+                    </a>
+                </li>
+                <li>
+                    <a href="./cumpleaños.html">
+                        🎂 Cumpleaños
+                    </a>
+                </li>
+                <li>
+                    <a href="./otros.html">
+                        🎁 Otros
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="./pedidos.html">
+                        🛒 Pedidos
+                    </a>
+                </li>
+                <hr>
+                <li>
+                    <a href="./acerca.html">
+                        Acerca de
+                    </a>
+                </li>
+            </ul>
+        </sidebar>
+        
+        <main class="marca-agua">
+
+            <form class="pedido-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Pedido enviado (demo)');">
+                <h2>Realizar pedido</h2>
+
+                <label>Nombre completo
+                    <input type="text" name="nombre" required>
+                </label>
+
+                <label>Correo electrónico
+                    <input type="email" name="email" required>
+                </label>
+
+                <label>Producto
+                    <select name="producto" required>
+                        <option value="">-- Seleccione --</option>
+                        <option value="honamento">Honamento</option>
+                        <option value="reno">Reno</option>
+                        <option value="esferas">Esferas</option>
+                        <option value="calendario">Calendario de Adviento</option>
+                        <option value="sueter">Suéter navideño</option>
+                    </select>
+                </label>
+
+                <label>Cantidad
+                    <input type="number" name="cantidad" min="1" value="1" required>
+                </label>
+
+                <label>Dirección de entrega
+                    <textarea name="direccion" rows="3" placeholder="Calle, número, colonia, ciudad" required></textarea>
+                </label>
+
+                <label>Método de pago
+                    <select name="metodo_pago" id="metodo_pago" required>
+                        <option value="">-- Seleccione --</option>
+                        <option value="transferencia">Transferencia</option>
+                        <option value="tarjeta">Tarjeta (crédito/débito)</option>
+                    </select>
+                </label>
+
+                <div class="card-details" id="card_details" style="display:none;">
+                    <label>Nombre en la tarjeta
+                        <input type="text" name="card_name" id="card_name">
+                    </label>
+
+                    <label>Número de tarjeta
+                        <input type="text" name="card_number" id="card_number" inputmode="numeric" pattern="[0-9\s]{13,19}">
+                    </label>
+
+                    <label>Expiración (MM/AA)
+                        <input type="text" name="card_exp" id="card_exp" placeholder="MM/AA">
+                    </label>
+
+                    <label>CVC
+                        <input type="text" name="card_cvc" id="card_cvc" inputmode="numeric" pattern="[0-9]{3,4}">
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="action">Enviar pedido</button>
+                </div>
+            </form>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const metodo = document.getElementById('metodo_pago');
+                    const cardDetails = document.getElementById('card_details');
+                    const cardFields = ['card_name','card_number','card_exp','card_cvc'].map(id => document.getElementById(id));
+
+                    function toggleCardFields() {
+                        if (metodo.value === 'tarjeta') {
+                            cardDetails.style.display = 'block';
+                            cardFields.forEach(f => f.required = true);
+                        } else {
+                            cardDetails.style.display = 'none';
+                            cardFields.forEach(f => { f.required = false; f.value = ''; });
+                        }
+                    }
+
+                    metodo.addEventListener('change', toggleCardFields);
+                    toggleCardFields();
+                });
+            </script>
+
+        </main>
+    </div>
+</body>
+
+</html>

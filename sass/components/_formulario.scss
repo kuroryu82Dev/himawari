@@ -1,0 +1,65 @@
+/* Estilos tipo "Bootstrap" para el formulario de pedidos */
+.pedido-form {
+    max-width: 720px;
+    margin: 2rem auto;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    color: #222;
+}
+
+.pedido-form h2 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: #0b5ed7;
+}
+
+.pedido-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.pedido-form input,
+.pedido-form select,
+.pedido-form textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    background: #fff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.pedido-form input:focus,
+.pedido-form select:focus,
+.pedido-form textarea:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+    outline: none;
+}
+
+.pedido-form textarea {
+    resize: vertical;
+}
+
+.pedido-form .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .pedido-form {
+        margin: 1rem;
+        padding: 1rem;
+    }
+        .pedido-form h2 {
+        text-align: center;
+    }
+}
