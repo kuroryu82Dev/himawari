@@ -4,11 +4,32 @@ main{
     border: 1px solid black ;
     height: $alturaSidebaryMain;
     position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .marca-agua {
     background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),url(../assets/icon/icono-tienda.png)center/contain no-repeat;
     color: #fff;
-    text-align: center; 
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Scrollbar personalizada */
+main::-webkit-scrollbar {
+    width: 8px;
+}
+
+main::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+main::-webkit-scrollbar-thumb {
+    background: rgba(33, 150, 243, 0.6);
+    border-radius: 4px;
+    
+    &:hover {
+        background: rgba(33, 150, 243, 0.8);
+    }
 }
 .flex-container{
     display: flex;
@@ -20,8 +41,8 @@ main{
 
 @media (max-width: 768px) {
     main {
-        height: auto;
-        min-height: 500px;
+        height: $alturaSidebaryMain;
+        overflow-y: auto;
     }
     
     .flex-container {
@@ -32,7 +53,8 @@ main{
 
 @media (max-width: 480px) {
     main {
-        height: auto;
+        height: $alturaSidebaryMain;
+        overflow-y: auto;
     }
     
     .flex-container {

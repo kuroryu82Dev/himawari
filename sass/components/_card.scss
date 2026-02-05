@@ -5,7 +5,7 @@
     border-radius: 0.75rem;
     background-color: white;
     width: 300px;
-    height: 500px;
+    min-height: 500px;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
     margin-left: 10px;
 }
@@ -13,16 +13,17 @@
 .card-image {
     background-color: rgb(236, 236, 236);
     width: 100%;
-    height: 350px;
+    min-height: 320px;
     border-radius: 6px 6px 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    transition: transform 0.3s ease-in-out;
 }
 
 .card-image:hover {
-    transform: scale(0.98);
+    transform: scale(1.3);
 }
 
 .category {
@@ -68,7 +69,7 @@
 }
 
 .img-card {
-    width: 60%;
+    width: 80%;
     object-fit: cover;
     border-radius: 6px 6px 0 0;
 }
