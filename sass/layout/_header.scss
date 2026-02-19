@@ -1,13 +1,35 @@
+﻿@use "../utilities/mixins" as m;
 header{
-    grid-area: header;
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),url(../assets/icon/icono-tienda.png)4% center/contain no-repeat;
+    @include m.layout-area(
+        header,
+        10vh,
+        (linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),url(../assets/icon/icono-tienda.png)4% center/contain no-repeat)
+    );
+    @include m.flex-center;
     color: #fff;
     text-align: center;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     
+    .header-content{
+        margin: 0 auto;
+    }
+
+    .menu-toggle {
+        position: absolute;
+        left: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+    }
+
+    .menu-toggle__icon {
+        font-size: 1rem;
+        line-height: 1;
+    }
+
     h1{
         font-size: 3rem;
         letter-spacing: 2px;

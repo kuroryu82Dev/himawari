@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@
     <meta name="twitter:description" content="Productos decorativos de MDF personalizados">
     
     <link rel="canonical" href="https://himawari.com">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Himawari - Diseño en MDF que transforma tus espacios</title>
     
@@ -46,48 +46,75 @@
                     Diseño en MDF que transforma tus espacios
                 </p>
             </div>
+            <button id="btnAside" class="btn btn-sm btn-primary menu-toggle" type="button" aria-controls="menuLateral" aria-expanded="true">
+                <span class="menu-toggle__icon" aria-hidden="true">&#9776;</span>
+                <span>Menú</span>
+            </button>
         </header>
 
-        <sidebar>
+
+
+        <aside id="menuLateral">
             <ul>
                 <li class="active">
                     <a href="#">
-                        Inicio
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="./assets/icon/icono-tienda.png" alt="Inicio">
+                            <span class="menu-item__label">Inicio</span>
+                        </span>
                     </a>
                 </li>
                 <li>
                     <a href="./pages/muertos.html">
-                        👻 Muertos
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="./assets/icon/acceso.png" alt="Muertos">
+                            <span class="menu-item__label">Muertos</span>
+                        </span>
                     </a>
                 </li>
                 <li>
                     <a href="./pages/Navidad.html">
-                        🎄 Navidad
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="./assets/icon/icono-tienda.png" alt="Navidad">
+                            <span class="menu-item__label">Navidad</span>
+                        </span>
                     </a>
                 </li>
                 <li>
-                    <a href="./pages/cumpleaños.html">
-                        🎂 Cumpleaños
+                    <a href="./pages/cumpleanios.html">
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="./assets/icon/correo-electronico.png" alt="Cumpleaños">
+                            <span class="menu-item__label">Cumpleaños</span>
+                        </span>
                     </a>
                 </li>
                 <li>
                     <a href="./pages/otros.html">
-                        🎁 Otros
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="./assets/icon/acceso.png" alt="Otros">
+                            <span class="menu-item__label">Otros</span>
+                        </span>
                     </a>
                 </li>
                 <li>
                     <a href="./pages/pedidos.html">
-                        🛒 Pedidos
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="./assets/icon/carrito-de-compras.png" alt="Pedidos">
+                            <span class="menu-item__label">Pedidos</span>
+                        </span>
                     </a>
                 </li>
                 <hr>
                 <li>
                     <a href="./pages/acerca.html">
-                        Acerca de
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="./assets/icon/correo-electronico.png" alt="Acerca de">
+                            <span class="menu-item__label">Acerca de</span>
+                        </span>
                     </a>
                 </li>
             </ul>
-        </sidebar>
+        </aside>
 
         <main class="marca-agua">
             <div class="hero-section">
@@ -105,8 +132,8 @@
                 <h3>Nuestros Productos</h3>
                 <div class="categories-grid">
                     <a href="./pages/muertos.html" class="category-card">
-                        <span class="category-icon">👻</span>
-                        <span class="category-name">Día de Muertos</span>
+                        <span class="category-icon">💀</span>
+                        <span class="category-name">Dí­a de Muertos</span>
                         <span class="category-desc">Decoraciones tradicionales y personalizadas</span>
                     </a>
                     <a href="./pages/Navidad.html" class="category-card">
@@ -114,7 +141,7 @@
                         <span class="category-name">Navidad</span>
                         <span class="category-desc">Adornos navideños únicos para tu hogar</span>
                     </a>
-                    <a href="./pages/cumpleaños.html" class="category-card">
+                    <a href="./pages/cumpleanios.html" class="category-card">
                         <span class="category-icon">🎂</span>
                         <span class="category-name">Cumpleaños</span>
                         <span class="category-desc">Decoraciones personalizadas para celebrar</span>
@@ -136,10 +163,51 @@
         </main>   
         
         <footer class="footer">
-            <p>&copy; 2025 Mi Página Web</p>
+            <div class="footer-grid">
+                <section class="footer-block">
+                    <h4>Himawari</h4>
+                    <p>Diseno en MDF que transforma tus espacios.</p>
+                </section>
+                <section class="footer-block">
+                    <h4>Contacto</h4>
+                    <p>WhatsApp: +52 55 0000 0000<br>Correo: hola@himawari.com<br>Ubicacion: Ciudad de Mexico</p>
+                </section>
+                <section class="footer-block">
+                    <h4>Horarios</h4>
+                    <p>Lunes a Viernes: 9:00 - 18:00<br>Sabado: 10:00 - 14:00</p>
+                </section>
+                <section class="footer-block">
+                    <h4>Links utiles</h4>
+                    <ul class="footer-links">
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="./pages/acerca.html">Acerca de</a></li>
+                        <li><a href="./pages/pedidos.html">Pedidos</a></li>
+                    </ul>
+                </section>
+                <section class="footer-block footer-cta">
+                    <a class="footer-cta__button" href="./pages/pedidos.html">Haz tu pedido</a>
+                </section>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2026 Himawari. Aviso de privacidad y terminos y condiciones.</p>
+            </div>
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const btnAside = document.getElementById('btnAside');
+        const contenedor = document.querySelector('.contenedor');
+
+        if (btnAside && contenedor) {
+            btnAside.addEventListener('click', () => {
+                const oculto = contenedor.classList.toggle('aside-oculto');
+                btnAside.setAttribute('aria-expanded', String(!oculto));
+            });
+        }
+    </script>
+
 </body>
 </html>
+

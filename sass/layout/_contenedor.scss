@@ -1,4 +1,6 @@
+@use "../utilities/mixins" as m;
 .contenedor{
+
     display: grid;
     grid-template-columns: 250px 1fr;
     grid-template-areas: 
@@ -8,6 +10,16 @@
     border: 1px solid black ;
 }
 
+@include m.mq(768px) {
+    .contenedor {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "sidebar"
+        "main"
+        "footer";
+    }
+}
 
 /* Estilos para página Acerca de */
 .contact-info {
@@ -63,18 +75,4 @@
     background: linear-gradient(135deg, #1976D2, #1565C0);
     transform: scale(1.05);
     text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    .contenedor {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "sidebar"
-            "main"
-            "footer";
-    }
-    .main {
-        height: 700px;
-    }
 }

@@ -7,13 +7,34 @@
 
 header {
   grid-area: header;
-  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../assets/icon/icono-tienda.png) 4% center/contain no-repeat;
-  color: #fff;
-  text-align: center;
   height: 10vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../assets/icon/icono-tienda.png) 4% center/contain no-repeat;
+  border: 1px solid black;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 0;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+header .header-content {
+  margin: 0 auto;
+}
+header .menu-toggle {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+header .menu-toggle__icon {
+  font-size: 1rem;
+  line-height: 1;
 }
 header h1 {
   font-size: 3rem;
@@ -26,78 +47,124 @@ header p {
   margin-top: -20px;
 }
 
-sidebar {
+aside {
   background: black;
   height: 85vh;
+  grid-area: sidebar;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
-sidebar hr {
+aside hr {
   color: white;
 }
-sidebar ul {
+aside ul {
   list-style: none;
   align-items: center;
   margin: 0;
-  width: 200px;
+  width: 100%;
 }
-sidebar ul li {
+aside ul li {
   text-align: center;
   margin: 10px 0;
   background-color: gray;
   border-radius: 10px;
-  padding-bottom: 10px;
 }
-sidebar ul li a {
+aside ul li a {
   color: white;
   text-decoration: none;
+  display: block;
+  padding: 0.55rem 0.7rem;
 }
-sidebar ul li a:hover {
+aside ul li a:hover {
   text-decoration: underline;
 }
-sidebar ul .active {
+aside ul .active {
   background: rgb(201, 204, 5);
   color: black;
   font-weight: bold;
 }
 
-/* Estilos para botón de pedidos */
-.btn-pedidos {
+.contenedor.aside-oculto {
+  grid-template-columns: 72px 1fr;
+  grid-template-areas: "header  header" "sidebar  main" "footer  footer";
+}
+
+.contenedor.aside-oculto aside {
   display: block;
-  background: linear-gradient(135deg, #2196F3, #1976D2) !important;
-  color: white !important;
+}
+
+.contenedor.aside-oculto .menu-item {
+  justify-content: center;
+}
+
+.contenedor.aside-oculto .menu-item__label {
+  display: none;
+}
+
+.menu-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.menu-item__icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex: 0 0 20px;
+}
+
+.menu-item__label {
+  white-space: nowrap;
+}
+
+/* Estilos para botón de pedidos */
+aside ul li a.btn-pedidos {
+  display: block;
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+  color: #fff;
   font-weight: bold;
-  padding: 0.75rem !important;
-  border-radius: 0.5rem !important;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
   text-align: center;
   transition: all 0.3s ease;
   margin-top: 0.5rem;
 }
-.btn-pedidos:hover {
-  background: linear-gradient(135deg, #1976D2, #1565C0) !important;
-  text-decoration: none !important;
+aside ul li a.btn-pedidos:hover {
+  background: linear-gradient(135deg, #1976D2, #1565C0);
+  text-decoration: none;
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
 }
 
-sidebar li:has(.btn-pedidos) {
+aside li:has(.btn-pedidos) {
   background: transparent;
   padding: 0;
 }
 
 @media (max-width: 768px) {
-  sidebar {
+  aside {
     height: auto;
   }
-  sidebar ul {
+  aside ul {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
   }
-  sidebar ul li {
+  aside ul li {
     flex: 1;
     min-width: 100px;
     margin: 5px;
+  }
+  .contenedor.aside-oculto {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "main" "footer";
+  }
+  .contenedor.aside-oculto aside {
+    display: none;
   }
 }
 main {
@@ -163,11 +230,80 @@ main::-webkit-scrollbar-thumb:hover {
 }
 footer {
   grid-area: footer;
-  background-color: gray;
+  background: #1f1f1f;
   border: 1px solid black;
-  height: 5vh;
+  color: #130101;
+  height: auto;
+  padding: 1rem 1.25rem;
 }
 
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.footer-block h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.footer-block p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-cta {
+  display: flex;
+  align-items: flex-end;
+}
+
+.footer-cta__button {
+  display: inline-block;
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.65rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.footer-cta__button:hover {
+  color: #fff;
+  text-decoration: none;
+  filter: brightness(1.05);
+}
+
+.footer-legal {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-cta {
+    align-items: flex-start;
+  }
+}
 .contenedor {
   display: grid;
   grid-template-columns: 250px 1fr;
@@ -175,6 +311,12 @@ footer {
   border: 1px solid black;
 }
 
+@media (max-width: 768px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "sidebar" "main" "footer";
+  }
+}
 /* Estilos para página Acerca de */
 .contact-info {
   background: rgba(255, 255, 255, 0.1);
@@ -231,15 +373,6 @@ footer {
   text-decoration: none;
 }
 
-@media (max-width: 768px) {
-  .contenedor {
-    grid-template-columns: 1fr;
-    grid-template-areas: "header" "sidebar" "main" "footer";
-  }
-  .main {
-    height: 700px;
-  }
-}
 /* Estilos para la página de inicio (Home) */
 .hero-section {
   padding: 2rem 1rem;
@@ -500,7 +633,7 @@ footer {
 }
 
 .card-image:hover {
-  transform: scale(1.3);
+  transform: scale(1.05);
 }
 
 .category {
