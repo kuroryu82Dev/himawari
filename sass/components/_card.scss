@@ -4,6 +4,7 @@
     justify-content: space-between;
     border-radius: 0.75rem;
     background-color: white;
+    color: #222;
     width: 300px;
     min-height: 500px;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
@@ -42,6 +43,10 @@
     border: none;
     padding: 1.5rem;
     text-align: center;
+}
+
+.info p {
+    color: #222;
 }
 
 .footer {

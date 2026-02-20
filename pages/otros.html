@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://himawari.com/pages/otros.html">
     <link rel="canonical" href="https://himawari.com/pages/otros.html">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>Otros Productos Decorativos - Himawari</title>
 </head>
@@ -24,44 +24,69 @@
                     Diseño en MDF que transforma tus espacios
                 </p>
             </div>
+            <button id="btnAside" class="btn btn-sm btn-primary menu-toggle" type="button" aria-controls="menuLateral" aria-expanded="true">
+                <span class="menu-toggle__icon" aria-hidden="true">&#9776;</span>
+                <span>Menú</span>
+            </button>
         </header>
         
-        <aside>
+        <aside id="menuLateral">
             <ul>
                 <li>
                     <a href="../index.html">
-                        Inicio
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="../assets/icon/hogar.png" alt="Inicio">
+                            <span class="menu-item__label">Inicio</span>
+                        </span>
                     </a>
                 </li>
                 <li>
                     <a href="./muertos.html">
-                        💀 Muertos
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="../assets/icon/calabaza.png" alt="Muertos">
+                            <span class="menu-item__label">Muertos</span>
+                        </span>
                     </a>
                 </li>
                 <li>
                     <a href="./Navidad.html">
-                        🎄 Navidad
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="../assets/icon/arbol-de-navidad.png" alt="Navidad">
+                            <span class="menu-item__label">Navidad</span>
+                        </span>
                     </a>
                 </li>
                 <li>
                     <a href="./cumpleanios.html">
-                        🎂 Cumpleaños
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="../assets/icon/feliz-cumpleanos.png" alt="Cumpleaños">
+                            <span class="menu-item__label">Cumpleaños</span>
+                        </span>
                     </a>
                 </li>
                 <li class="active">
                     <a href="./otros.html">
-                        🎁 Otros
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="../assets/icon/votar.png" alt="Otros">
+                            <span class="menu-item__label">Otros</span>
+                        </span>
                     </a>
                 </li>
                 <li>
                     <a href="./pedidos.html">
-                        🛒 Pedidos
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="../assets/icon/hacer-un-pedido.png" alt="Pedidos">
+                            <span class="menu-item__label">Pedidos</span>
+                        </span>
                     </a>
                 </li>
                 <hr>
                 <li>
                     <a href="./acerca.html">
-                        Acerca de
+                        <span class="menu-item">
+                            <img class="menu-item__icon" src="../assets/icon/acerca-de.png" alt="Acerca de">
+                            <span class="menu-item__label">Acerca de</span>
+                        </span>
                     </a>
                 </li>
             </ul>
@@ -129,7 +154,21 @@
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const btnAside = document.getElementById('btnAside');
+        const contenedor = document.querySelector('.contenedor');
+
+        if (btnAside && contenedor) {
+            btnAside.addEventListener('click', () => {
+                const oculto = contenedor.classList.toggle('aside-oculto');
+                btnAside.setAttribute('aria-expanded', String(!oculto));
+            });
+        }
+    </script>
 </body>
 </html>
+
+
 
